@@ -1,4 +1,4 @@
-# Django-Object-Detection-with-Latest-YOLO-Ultralytics-
+# Django-Object-Detection-with-Latest-YOLO-Ultralytics
 Real-time Django object detection web application powered by the latest Ultralytics YOLO model, featuring live webcam detection, image upload detection, bounding box predictions, and a beginner-friendly VS Code setup
 
 Real-time object detection web application built with **Django** and the **latest YOLO (Ultralytics)** model. This project supports:
