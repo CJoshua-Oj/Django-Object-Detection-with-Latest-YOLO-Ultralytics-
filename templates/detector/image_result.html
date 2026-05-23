@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="{% static 'detector/style.css' %}">
+</head>
+<body>
+    <div class="page">
+        <h1>Detection Result</h1>
+
+        <div class="camera-card">
+            <img src="{{ image_url }}" alt="Detected Image">
+        </div>
+
+        <table>
+            <tr>
+                <th>Object</th>
+                <th>Confidence</th>
+                <th>Xmin</th>
+                <th>Ymin</th>
+                <th>Xmax</th>
+                <th>Ymax</th>
+            </tr>
+            {% for item in detections %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.confidence|floatformat:2 }}</td>
+                <td>{{ item.xmin|floatformat:0 }}</td>
+                <td>{{ item.ymin|floatformat:0 }}</td>
+                <td>{{ item.xmax|floatformat:0 }}</td>
+                <td>{{ item.ymax|floatformat:0 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <p><a href="/live/image-detection/" class="link">Upload Another Image</a></p>
+        <p><a href="/live/" class="link">Back to Webcam Detection</a></p>
+    </div>
+</body>
+</html>

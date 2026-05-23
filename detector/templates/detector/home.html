@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ultralytics YOLO Django Detection</title>
+    <link rel="stylesheet" href="{% static 'detector/style.css' %}">
+</head>
+<body>
+    <div class="page">
+        <h1>Ultralytics YOLO Object Detection</h1>
+        <p class="subtitle">Choose live webcam detection or image upload detection.</p>
+
+        <div class="buttons">
+            <a href="/live/" class="btn">Live Webcam</a>
+            <a href="/live/image-detection/" class="btn secondary">Image Upload</a>
+        </div>
+
+        <div class="camera-card">
+            <img src="{% url 'video_feed' %}" alt="Live Ultralytics YOLO webcam detection">
+        </div>
+
+        <div class="instructions">
+            <h2>Run Notes</h2>
+            <p>If the camera does not show, close other apps using your webcam and refresh this page.</p>
+            <p>The first run may be slow because the selected Ultralytics YOLO model downloads automatically.</p>
+        </div>
+    </div>
+</body>
+</html>

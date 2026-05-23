@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Image Detection</title>
+    <link rel="stylesheet" href="{% static 'detector/style.css' %}">
+</head>
+<body>
+    <div class="page">
+        <h1>Ultralytics YOLO Image Object Detection</h1>
+        <p class="subtitle">Upload an image and detect objects.</p>
+
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn button-submit">Detect Objects</button>
+        </form>
+
+        <p><a href="/live/" class="link">Back to Webcam Detection</a></p>
+    </div>
+</body>
+</html>
